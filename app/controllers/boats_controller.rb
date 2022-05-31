@@ -1,4 +1,4 @@
-class BoatsController #inherit from
+class BoatsController < ApplicationController
 
   #Methoden außerhalb des Schemas
   def new
