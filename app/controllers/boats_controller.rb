@@ -1,6 +1,5 @@
 class BoatsController < ApplicationController
 
-  #Methoden außerhalb des Schemas
   def new
     @boat = Boat.new
   end
@@ -10,9 +9,13 @@ class BoatsController < ApplicationController
   end
 
   def create
-    boat = Boat.new(boat_params)
-    boat.save
-    redirect_to boat_path
+    @boat = Boat.new(boat_params)
+    @boat.user = current_user
+    if @boat.save
+      redirect_to boat_path(@boat)
+    else
+      render :new
+    end
   end
 
   def update
@@ -30,7 +33,7 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:boat_type, :owner_id, :location, :total_occcupancy, :price)
+    params.require(:boat).permit(:boat_type, :location, :total_occupancy, :price)
   end
 end
 

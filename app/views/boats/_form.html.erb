@@ -1,6 +1,5 @@
-<%= simple_form @reservations do |f| %>
+<%= simple_form_for boat do |f| %>
   <%= f.input :boat_type %>
-  <%= f.input :owner_id %>
   <%= f.input :total_occupancy %>
   <%= f.input :price %>
   <%= f.button :submit %>
