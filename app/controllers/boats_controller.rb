@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
 
-# before_action :find_by_id, only: %i[show edit update destroy]
-# skip_before_action :authenticate_user!, only: %i[index show]
+before_action :find_by_id, only: %i[show edit update destroy]
+skip_before_action :authenticate_user!, only: %i[index show]
 
   def new
     @boat = Boat.new

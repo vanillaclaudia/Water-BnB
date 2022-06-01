@@ -5,13 +5,16 @@
     <%= link_to "Get yer boats 'ere", "boats", class: "btn btn-ghost" %>
   </div>
 </div>
-<% @boats.each do |boat| %>
-  <div class="card-product">
-    <img src="https://www.yachtsinternational.com/.image/ar_233:100%2Cc_fill%2Ccs_srgb%2Cg_faces:center%2Cq_auto:good%2Cw_3840/MTQ3MzM2MDExNzAwMTg0ODc5/remember_when_hi-03577-credit-quin-bisset.webp" />
-    <div class="card-product-infos">
-
-      <p><%= boat.boat_type %> - <%= boat.price %> -  <%= boat.total_occupancy %></p>
-
-    </div>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.bavariayachts.com/fileadmin/_processed_/5/c/csm_bavaria-home-map-mb_7358dfff3a.jpg)">
+    <%= link_to "Great Boats", "boats", class: "btn btn-ghost" %>
   </div>
-<% end %>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.marineinsight.com/wp-content/uploads/2021/06/Dinghy-Boats.jpg.webp)">
+    <%= link_to "Ok Boats", "boats", class: "btn btn-ghost" %>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://m.belfasttelegraph.co.uk/news/northern-ireland/b98c9/41555382.ece/AUTOCROP/w620/wreck)">
+    <%= link_to "Historic Boats", "boats", class: "btn btn-ghost" %>
+  </div>
+</div>
