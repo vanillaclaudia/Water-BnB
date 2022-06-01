@@ -1,6 +1,14 @@
-<%= simple_form_for boat do |f| %>
-  <%= f.input :boat_type %>
-  <%= f.input :total_occupancy %>
-  <%= f.input :price %>
-  <%= f.button :submit %>
+<%= simple_form_for(@boat) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :boat_type, label: false, placeholder: 'Boat Name', input_html: {class:'boat-input'} %>
+    <%= f.input :total_occupancy, label: false, placeholder: 'Total Occupancy', input_html: {class:'boat-input'} %>
+    <%= f.input :price, as: :numeric, label: false, placeholder: 'Price?', input_html: {class:'boat-input'} %>
+
+  </div>
+  <div class="form-actions d-flex justify-content-center mt-5">
+    <%= f.button :submit, class:'boat-button' %>
+  </div>
+
 <% end %>
+
+<%# <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false, input_html: {class:'boat-input'} %> %>
