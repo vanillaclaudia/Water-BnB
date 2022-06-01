@@ -1,1 +1,26 @@
-<%# SHOW INFORMATION ON CHOSEN BOAT %>
+SHOW INFORMATION ON CHOSEN BOAT
+
+<div class="container">
+  <div class="boat-row">
+    <div class="boat-card">
+    <h1><%= @boat.boat_type %> </h1>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>boat_type:</strong> <%= @boat.boat_type %></li>
+        <li class="list-group-item"><strong>total_occupancy:</strong> <%= @boat.total_occupancy %></li>
+        <li class="list-group-item"><strong>price:</strong> <%= @boat.price %></li>
+      </ul>
+      <br>
+      <p><%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-boat-btn"  %></p>
+    </div>
+
+    <div class="col-4 mt-5">
+      <h4>Create new booking</h4>
+        <%= simple_form_for [@boat, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, class: "create-boat-btn" %>
+        <% end %>
+    </div>
+  </div>
+</div>
