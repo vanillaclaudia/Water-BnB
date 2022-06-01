@@ -40,6 +40,12 @@
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.ctfassets.net/pjshm78m9jt4/348811_header/793bea22e0827104cbc17d3e0c9fe0be/importedImage348811_header)">
     <%= link_to "Trawler", "boat.boat_id", class: "btn btn-ghost" %>
   </div>
+
+  <% @boats.each do |boat| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.yachtsinternational.com/.image/ar_233:100%2Cc_fill%2Ccs_srgb%2Cg_faces:center%2Cq_auto:good%2Cw_3840/MTQ3MzM2MDExNzAwMTg0ODc5/remember_when_hi-03577-credit-quin-bisset.webp)">
+      <%= link_to boat.boat_type, boat_path(boat), class: "btn btn-ghost" %>
+    </div>
+  <% end %>
 </div>
 
 <div class="button">

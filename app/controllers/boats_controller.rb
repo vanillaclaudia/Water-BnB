@@ -8,7 +8,7 @@ skip_before_action :authenticate_user!, only: %i[index show]
   end
 
   def index
-    @boat = Boat.all
+    @boats = Boat.all
   end
 
   def create
