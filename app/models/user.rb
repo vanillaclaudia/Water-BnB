@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :rented_boats, through: :bookings, source: :boat
   has_one_attached :avatar
-  validates :username, uniqueness: true
+  # validates :username, uniqueness: true
 end

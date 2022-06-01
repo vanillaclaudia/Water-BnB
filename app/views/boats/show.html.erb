@@ -16,7 +16,7 @@ SHOW INFORMATION ON CHOSEN BOAT
 
     <div class="col-4 mt-5">
       <h4>Create new booking</h4>
-        <%= simple_form_for [@boat, @booking] do |f| %>
+        <%= simple_form_for [@boat, @reservation] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.button :submit, class: "create-boat-btn" %>

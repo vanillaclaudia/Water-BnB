@@ -26,6 +26,11 @@ class BoatsController < ApplicationController
     redirect_to boat_path(@boat)
   end
 
+  def show
+    @boat = Boat.find(params[:id])
+    @reservation = Reservation.new
+  end
+
   def destroy
     @boat.destroy
     redirect_to boat_path
