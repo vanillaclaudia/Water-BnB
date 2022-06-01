@@ -9,12 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%# <p class="notice">= notice</p> %>
+  <%# <p class="alert">= alert</p> %>
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div style= "min-height: calc(100vh - 166.16px)">
+      <%= yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>
