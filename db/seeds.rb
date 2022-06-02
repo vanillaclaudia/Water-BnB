@@ -19,3 +19,67 @@ callum = User.create(
   password_confirmation: 'password'
 )
 # puts "Created user: #{Callum.first_name} #{Callum.last_name}"
+puts "Created user: #{Callum.first_name} #{Callum.last_name}"
+
+Boat.create(
+  boat_type: "Yacht",
+  total_occupancy: 50,
+  price: 1000
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Motorboat",
+  total_occupancy: 10,
+  price: 100
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Barge",
+  total_occupancy: 25,
+  price: 300
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Amphibious Vehicle",
+  total_occupancy: 4,
+  price: 1_000_000
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "El Galeón",
+  total_occupancy: 200,
+  price: 2000
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Mystery Boat",
+  total_occupancy: 3,
+  price: 500
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Car-Boat",
+  total_occupancy: 5,
+  price: 100
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Dinghy",
+  total_occupancy: 1,
+  price: 20000
+)
+puts "Created Boat"
+
+Boat.create(
+  boat_type: "Trawler",
+  total_occupancy: 30,
+  price: 200
+)
+puts "Created Boat"
