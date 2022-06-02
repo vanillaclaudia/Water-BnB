@@ -3,7 +3,7 @@
     <%= f.input :boat_type, label: false, placeholder: 'Boat Name', input_html: { class:'boat-input' } %>
     <%= f.input :total_occupancy, label: false, placeholder: 'Total Occupancy', input_html: { class:'boat-input' } %>
     <%= f.input :price, as: :numeric, label: false, placeholder: 'Price?', input_html: { class:'boat-input' } %>
-
+    <%= f.input :photo, as: :file %>
   </div>
   <div class="form-actions d-flex justify-content-center mt-5">
     <%= f.button :submit, class:'boat-button' %>

@@ -1,10 +1,9 @@
-SHOW INFORMATION ON CHOSEN BOAT
 
 <div class="container">
   <div class="boat-row">
     <div class="boat-card">
     <h1><%= @boat.boat_type %> </h1>
-
+      <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong>boat_type:</strong> <%= @boat.boat_type %></li>
         <li class="list-group-item"><strong>total_occupancy:</strong> <%= @boat.total_occupancy %></li>

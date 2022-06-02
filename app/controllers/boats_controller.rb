@@ -41,7 +41,7 @@ skip_before_action :authenticate_user!, only: %i[index show]
   end
 
   def boat_params
-    params.require(:boat).permit(:boat_type, :location, :total_occupancy, :price, :email)
+    params.require(:boat).permit(:boat_type, :location, :total_occupancy, :price, :photo)
   end
 end
 
