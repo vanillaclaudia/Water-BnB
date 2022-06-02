@@ -13,7 +13,7 @@ skip_before_action :authenticate_user!, only: %i[index show]
 
   def create
     @boat = Boat.new(boat_params)
-    @boat.user = current_user
+    @boat.user_id = current_user.id
     if @boat.save
       redirect_to boat_path(@boat)
     else
@@ -41,7 +41,7 @@ skip_before_action :authenticate_user!, only: %i[index show]
   end
 
   def boat_params
-    params.require(:boat).permit(:boat_type, :location, :total_occupancy, :price)
+    params.require(:boat).permit(:boat_type, :location, :total_occupancy, :price, :email)
   end
 end
 

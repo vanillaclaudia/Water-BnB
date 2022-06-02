@@ -15,12 +15,13 @@ SHOW INFORMATION ON CHOSEN BOAT
     </div>
 
     <div class="col-4 mt-5">
-      <h4>Create new booking</h4>
-        <%= simple_form_for [@boat, @reservation] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, class: "create-boat-btn" %>
-        <% end %>
+      <%= simple_form_for [@boat, @reservation] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true%>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <div class="d-flex justify-content-center mt-4.5 py-2">
+          <%= f.submit "Book Boat Boi", class:"button-64" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
