@@ -1,6 +1,6 @@
 class CreateBoats < ActiveRecord::Migration[7.0]
   def change
-    create_table :jewels do |t|
+    create_table :boats do |t|
       t.string :boat_type
       t.float :price
       t.text :description
