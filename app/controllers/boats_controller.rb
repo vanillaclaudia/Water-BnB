@@ -1,7 +1,6 @@
 class BoatsController < ApplicationController
-
-before_action :find_by_id, only: [:show, :edit, :update, :destroy]
-skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :find_by_id, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def new
     @boat = Boat.new
@@ -34,7 +33,7 @@ skip_before_action :authenticate_user!, only: %i[index show]
   def destroy
     # @boat = Boat.find(params[:id])
     @boat.destroy
-    redirect_to boats_path
+    redirect_to boats_path, status: :see_other
   end
 
   private
