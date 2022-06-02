@@ -136,10 +136,11 @@ body {
 .footer-links {
   display: flex;
   align-items: center;
+  color: black;
 }
 .footer-links li a {
-  color: black;
-  opacity: 0.15;
+  color: darkgray;
+  opacity: 0.8;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -149,4 +150,16 @@ body {
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer-link {
+  color: black;
+  opacity: 0.8;
+  text-decoration: none;
+  align-items: baseline;
+  margin-bottom: 5em;
+}
+
+.footer-link:hover {
+  color: darkgray;
 }

@@ -74,10 +74,31 @@
 
 .boat-index-title {
   text-align: center;
-  font-family: 'Pirata One', cursive;
+  font-family: 'Nunito', cursive;
   font-weight: 100;
   font-size: 50px;
-  border: 1px solid aquamarine;
   margin-left: 10em;
   margin-right: 10em;
+}
+
+.background-style {
+  background-color: whitesmoke;
+}
+
+.btn-add-new {
+  color: black;
+  border: 1px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+  margin-left: 1em;
+  margin-top: 5em;
+  text-decoration: wavy;
+}
+
+.btn-add-new:hover {
+  color: darkgray;
+  opacity: 0.3;
 }
