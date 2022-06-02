@@ -1,9 +1,11 @@
 
 <div class="container">
-  <div class="boat-row">
-    <div class="boat-card">
-    <h1><%= @boat.boat_type %> </h1>
-      <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="boat-row d-flex">
+    <div class="boat-card" style="width: 18rem;">
+     <%= cl_image_tag @boat.photo.key, height: 300, width: 296, crop: :fill, class: "boat-card-img" %>
+      <div class="boat-card-body">
+        <h1><%= @boat.boat_type %></h1>
+      </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong>boat_type:</strong> <%= @boat.boat_type %></li>
         <li class="list-group-item"><strong>total_occupancy:</strong> <%= @boat.total_occupancy %></li>
