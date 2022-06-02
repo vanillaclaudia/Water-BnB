@@ -1,38 +1,29 @@
 class ReservationsController < ApplicationController
 
-  def index
-    @reservations = Reservations.all
-  end
-
-  def show
-    @reservation
-  end
-
   def new
+    @reservation = Reservation.find(params[:boat_id])
     @reservation = Reservation.new
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.boat = Boat.find(params[:boat_id])
+    @boat = Boat.find(params[:boat_id])
+    @reservation = Reservation.new
+    @reservation.boat_id = @boat.id
+    @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      redirect_to reservation_path(@reservation), notice: 'Reservation was successfully created.'
     else
-      redirect_to boat_path(@boat)
+      render 'boats/show', status: :unprocessable_entity
     end
+  end
+
+  def my_reservations
+    @my_reservations = Reservation.where(user: current_user)
   end
 
   private
 
-  def set_reservation
-    @reservation = Reservation.find(params[:id])
-  end
-
-  def set_boat
-    @boat = Boat.find(params[:boat_id])
-  end
-
   def reservation_params
-    params[:reservation].permit(:total_price, :start_date, :end_date)
+    params.require(:reservation).permit(:start_date, :end_date)
   end
 end

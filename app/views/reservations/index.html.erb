@@ -1,21 +1,19 @@
-<div class="mt-3">
-  <div class="container">
-    <h1>My reservations</h1>
-    <div class="row mt-5">
-      <div class="col-6">
-        <h2>My Boats</h2>
-        <% current_user.boats.each do |boat| %>
-          <%= boat.name %>
-        <% end %>
+<div class="container text-center mt-5">
+  <h3>This is all your reservationss dear </h3>
+  <div class="row justify-content-center">
+    <% @my_reservationss.each do |reservations| %>
+      <div class="card-product col-8 col-md-4 col-lg-3 m-3 px-4 rounded" style="background-image: url('<%= asset_url('quater-circle.png') %>');" >
+          <%= cl_image_tag reservations.boat.photos.first.key %>
+        <div class="card-product-infos">
+          <h2><%= reservations.boat.title %></h2>
+          <p>£<%= reservations.boat.price %></p>
+        </div>
+        <div class="ps-2">
+          <p style="font-size:10px"><strong>From</strong><br> <%= reservations.start_date.strftime("%B %d") %></p>
+          <p style="font-size:10px; margin:0" class="pt-1"><strong>To</strong><br> <%= reservations.end_date.strftime("%B %d") %></p>
+        </div>
+          <%= link_to ">", reservations.boat, class: "btn rounded-pill bottomright" %>
       </div>
-      <div class="col-6">
-        <h3>My Bookings</h3>
-        <% current_user.bookings.each do |booking| %>
-          <p><%= booking.start_date %></p>
-          <p><%= booking.end_date %></p>
-          <p><%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-booking-btn" %></p>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
