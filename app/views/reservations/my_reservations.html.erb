@@ -1,0 +1,18 @@
+<div class="container text-center mt-5">
+  <h3>Find yer bookings 'ere </h3>
+  <div class="row justify-content-center">
+    <% @my_reservations.each do |reservation| %>
+          <%= cl_image_tag reservation.boat.photo.key, height: 300, width: 296, crop: :fill, class: "boat-card-img" %>
+        <div class="card-product-infos">
+          <h2><%= reservation.boat.boat_type %></h2>
+          <p>£<%= reservation.boat.price %></p>
+        </div>
+        <div class="ps-2">
+          <p style="font-size:10px"><strong>From</strong><br> <%= reservation.start_date.strftime("%B %d") %></p>
+          <p style="font-size:10px; margin:0" class="pt-1"><strong>To</strong><br> <%= reservation.end_date.strftime("%B %d") %></p>
+        </div>
+          <%= link_to ">", reservation.boat, class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

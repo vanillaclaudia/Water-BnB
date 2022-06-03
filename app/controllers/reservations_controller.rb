@@ -1,3 +1,5 @@
+require 'date'
+
 class ReservationsController < ApplicationController
 
   def new
@@ -7,14 +9,23 @@ class ReservationsController < ApplicationController
 
   def create
     @boat = Boat.find(params[:boat_id])
-    @reservation = Reservation.new
-    @reservation.boat_id = @boat.id
-    @reservation.user_id = current_user.id
+    @reservation = Reservation.new(reservation_params)
+    @reservation.boat = @boat
+    @reservation.user = current_user
     if @reservation.save
       redirect_to reservation_path(@reservation), notice: 'Reservation was successfully created.'
     else
       render 'boats/show', status: :unprocessable_entity
     end
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:user_id])
+    @Reservation = Reservation.find(params[:id])
   end
 
   def my_reservations
@@ -26,4 +37,5 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)
   end
+
 end
