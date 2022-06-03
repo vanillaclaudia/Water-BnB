@@ -5,6 +5,12 @@
   </div>
 </div>
 
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <%# SHOW ALL BOATS + LINK TO ADD A BOAT %>
 <!--div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.yachtsinternational.com/.image/ar_233:100%2Cc_fill%2Ccs_srgb%2Cg_faces:center%2Cq_auto:good%2Cw_3840/MTQ3MzM2MDExNzAwMTg0ODc5/remember_when_hi-03577-credit-quin-bisset.webp)">
