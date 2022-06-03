@@ -21,6 +21,16 @@ callum = User.create(
 # puts "Created user: #{Callum.first_name} #{Callum.last_name}"
 puts "Created user: #{Callum.first_name} #{Callum.last_name}"
 
+puts "Creating 5 random users ..."
+5.times do
+  user = User.new
+  user.email = Faker::Internet.email
+  user.password = '123456'
+  user.password_confirmation = '123456'
+  user.save!
+  puts "Created user"
+end
+
 boat = Boat.new(
   boat_type: "Yacht",
   total_occupancy: 50,
