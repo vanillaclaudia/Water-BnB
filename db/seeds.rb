@@ -21,11 +21,13 @@ callum = User.create(
 # puts "Created user: #{Callum.first_name} #{Callum.last_name}"
 puts "Created user: #{Callum.first_name} #{Callum.last_name}"
 
-Boat.create(
+boat = Boat.new(
   boat_type: "Yacht",
   total_occupancy: 50,
   price: 1000
 )
+# boat attach photo
+boat.save
 puts "Created Boat"
 
 Boat.create(

@@ -2,8 +2,7 @@
   <h3>Find yer bookings 'ere </h3>
   <div class="row justify-content-center">
     <% @my_reservations.each do |reservation| %>
-
-          <%= cl_image_tag @boat.photo.key, height: 300, width: 296, crop: :fill, class: "boat-card-img" %>
+          <%= cl_image_tag reservation.boat.photo.key, height: 300, width: 296, crop: :fill, class: "boat-card-img" %>
         <div class="card-product-infos">
           <h2><%= reservation.boat.boat_type %></h2>
           <p>£<%= reservation.boat.price %></p>
